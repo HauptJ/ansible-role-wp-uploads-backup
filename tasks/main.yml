@@ -1,0 +1,9 @@
+---
+
+- name: Copy {{ resty_default_web_dir }}/wp-content/uploads/ backup to local machine
+  synchronize:
+    mode: pull
+    src: "{{ resty_default_web_dir }}/wp-content/uploads/"
+    dest: "{{ wp_uploads_backup_dir }}"
+    recursive: yes
+  delegate_to: localhost
